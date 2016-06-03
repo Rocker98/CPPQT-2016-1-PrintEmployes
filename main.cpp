@@ -2,6 +2,7 @@
 #include <vector>
 
 #include "printable.h"
+#include "emploee.h"
 
 /*
  * Функція print друкує інформацію про кожен об'єкт у списку. Ідея полягає у тому, що функція
@@ -16,6 +17,8 @@
  *
  * Параметер listToPrint - Список об'єктів про які необхідно вивести інформацію у консоль.
  */
+
+
 void printList(const std::vector<Printable *> listToPrint)
 {
     for (auto item: listToPrint)
@@ -24,6 +27,7 @@ void printList(const std::vector<Printable *> listToPrint)
         std::cout << std::endl;
     }
 }
+
 
 int main()
 {
@@ -37,9 +41,11 @@ int main()
     //    * Заробітна плата (число у доларах США)
     //    * З якого року працює
     // Клас має мати окремий *.h-файл з описом та окремий *.cpp файл що міститиме реалізацію.
+
     // 2. Для того, щоб вивести інформацію про працівника, успадкуйте його від класу Printable
     // та перевизначіть метод print(). У цьому методі виведіть усю доступну про працівника
     // інформацію у консоль.
+
     // 3. Створіть 2-3 об'єкта класу Employee, додайте їх до списку employeesToPrint
     // та виведіть з допомогою функції printList().
     //
@@ -56,6 +62,28 @@ int main()
     // Для того, щоб вивести інформацію про офіс, успадкуйте його від класу Printable
     // та перевизначіть метод print(). У цьому методі виведіть усю доступну про офіс
     // інформацію у консоль.
+
+
+      Employee a;
+      Employee *p;
+      p=&a;
+
+      a.setEmployee(p);
+
+//    string name;
+//    int mobilenumber;
+//    string address;
+//    int salary;
+//    int year;
+
+//    Employee a;
+//    a.setEmployee(name,mobilenumber,address,salary,year);
+//    cout<<endl;
+    a.print();
+
+
+
+
 
     std::vector<Printable *> employeesToPrint;
 
