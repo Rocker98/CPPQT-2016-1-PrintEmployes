@@ -3,7 +3,9 @@
 
 #include "printable.h"
 #include "emploee.h"
+#include "office.h"
 
+using namespace std;
 /*
  * Функція print друкує інформацію про кожен об'єкт у списку. Ідея полягає у тому, що функція
  * працює з нащадками класу Printable, який є базовим класом для всіх об'єктів, які можуть
@@ -19,11 +21,11 @@
  */
 
 
-void printList(const std::vector<Printable *> listToPrint)
+void printList(const std::vector <Printable * > listToPrint)
 {
     for (auto item: listToPrint)
     {
-        item->print();
+        item->print ();
         std::cout << std::endl;
     }
 }
@@ -64,40 +66,46 @@ int main()
     // інформацію у консоль.
 
 
-      Employee a;
-      Employee *p;
-      p=&a;
-
-      a.setEmployee(p);
-
-//    string name;
-//    int mobilenumber;
-//    string address;
-//    int salary;
-//    int year;
-
-//    Employee a;
-//    a.setEmployee(name,mobilenumber,address,salary,year);
-//    cout<<endl;
-    a.print();
-
-
-
-
-
-    std::vector<Printable *> employeesToPrint;
-
     // Створіть об'єкти Employee та наповніть список тут....
+    vector <Printable *> employeesToPrint;
+
+    Employee employee1;
+    Employee *p;
+    p=&employee1;
+    p->setEmployee(p);
+
+    Employee emloyee2;
+    Employee *q;
+    q=&emloyee2;
+    q->setEmployee(q);
+
+
+    employeesToPrint.push_back(&employee1);
+    employeesToPrint.push_back(&emloyee2);
 
     printList(employeesToPrint);
 
-    std::cout << std::endl; // ------------
 
-    std::vector<Printable *> officesToPrint;
+ cout << std::endl; // ------------
 
-    // Створіть об'єкти Office та наповніть список тут....
+ // Створіть об'єкти Office та наповніть список тут....
 
-    printList(officesToPrint);
+ vector<Printable *> officesToPrint;
+
+    Office office1;
+    Office *g;
+    g=&office1;
+    g->setOffice(g);
+
+    Office office2;
+    Office *m;
+    m=&office2;
+    m->setOffice(m);
+
+   officesToPrint.push_back(&office1);
+   officesToPrint.push_back(&office2);
+
+   printList(officesToPrint);
 
     return 0;
 }
